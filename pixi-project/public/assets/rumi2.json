@@ -1,0 +1,1379 @@
+{
+  "frames": {
+    "rumistaticidle0.aseprite": {
+      "frame": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle0.aseprite": {
+      "frame": { "x": 0, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle1.aseprite": {
+      "frame": { "x": 90, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle2.aseprite": {
+      "frame": { "x": 180, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle3.aseprite": {
+      "frame": { "x": 270, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle4.aseprite": {
+      "frame": { "x": 360, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle5.aseprite": {
+      "frame": { "x": 450, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle6.aseprite": {
+      "frame": { "x": 540, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle7.aseprite": {
+      "frame": { "x": 630, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiIdle8.aseprite": {
+      "frame": { "x": 720, "y": 37, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk0.aseprite": {
+      "frame": { "x": 0, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk1.aseprite": {
+      "frame": { "x": 90, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk2.aseprite": {
+      "frame": { "x": 180, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk3.aseprite": {
+      "frame": { "x": 270, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk4.aseprite": {
+      "frame": { "x": 360, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk5.aseprite": {
+      "frame": { "x": 450, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk6.aseprite": {
+      "frame": { "x": 540, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWalk7.aseprite": {
+      "frame": { "x": 630, "y": 74, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun0.aseprite": {
+      "frame": { "x": 0, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun1.aseprite": {
+      "frame": { "x": 90, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun2.aseprite": {
+      "frame": { "x": 180, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun3.aseprite": {
+      "frame": { "x": 270, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun4.aseprite": {
+      "frame": { "x": 360, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun5.aseprite": {
+      "frame": { "x": 450, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun6.aseprite": {
+      "frame": { "x": 540, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun7.aseprite": {
+      "frame": { "x": 630, "y": 111, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiRun Fast0.aseprite": {
+      "frame": { "x": 0, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast1.aseprite": {
+      "frame": { "x": 90, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast2.aseprite": {
+      "frame": { "x": 180, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast3.aseprite": {
+      "frame": { "x": 270, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast4.aseprite": {
+      "frame": { "x": 360, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast5.aseprite": {
+      "frame": { "x": 450, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast6.aseprite": {
+      "frame": { "x": 540, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRun Fast7.aseprite": {
+      "frame": { "x": 630, "y": 148, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll0.aseprite": {
+      "frame": { "x": 0, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll1.aseprite": {
+      "frame": { "x": 90, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll2.aseprite": {
+      "frame": { "x": 180, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll3.aseprite": {
+      "frame": { "x": 270, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll4.aseprite": {
+      "frame": { "x": 360, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll5.aseprite": {
+      "frame": { "x": 450, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll6.aseprite": {
+      "frame": { "x": 540, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll7.aseprite": {
+      "frame": { "x": 630, "y": 185, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 75
+    },
+    "rumiRoll Attack0.aseprite": {
+      "frame": { "x": 0, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack1.aseprite": {
+      "frame": { "x": 90, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack2.aseprite": {
+      "frame": { "x": 180, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack3.aseprite": {
+      "frame": { "x": 270, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack4.aseprite": {
+      "frame": { "x": 360, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack5.aseprite": {
+      "frame": { "x": 450, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack6.aseprite": {
+      "frame": { "x": 540, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack7.aseprite": {
+      "frame": { "x": 630, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack8.aseprite": {
+      "frame": { "x": 720, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiRoll Attack9.aseprite": {
+      "frame": { "x": 810, "y": 222, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 86
+    },
+    "rumiSlash 10.aseprite": {
+      "frame": { "x": 0, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 11.aseprite": {
+      "frame": { "x": 90, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 12.aseprite": {
+      "frame": { "x": 180, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 13.aseprite": {
+      "frame": { "x": 270, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 14.aseprite": {
+      "frame": { "x": 360, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 15.aseprite": {
+      "frame": { "x": 450, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 16.aseprite": {
+      "frame": { "x": 540, "y": 259, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 20.aseprite": {
+      "frame": { "x": 0, "y": 296, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 21.aseprite": {
+      "frame": { "x": 90, "y": 296, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 22.aseprite": {
+      "frame": { "x": 180, "y": 296, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 23.aseprite": {
+      "frame": { "x": 270, "y": 296, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlash 24.aseprite": {
+      "frame": { "x": 360, "y": 296, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlam0.aseprite": {
+      "frame": { "x": 0, "y": 333, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlam1.aseprite": {
+      "frame": { "x": 90, "y": 333, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlam2.aseprite": {
+      "frame": { "x": 180, "y": 333, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlam3.aseprite": {
+      "frame": { "x": 270, "y": 333, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSlam4.aseprite": {
+      "frame": { "x": 360, "y": 333, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSpin Attack0.aseprite": {
+      "frame": { "x": 0, "y": 370, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSpin Attack1.aseprite": {
+      "frame": { "x": 90, "y": 370, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSpin Attack2.aseprite": {
+      "frame": { "x": 180, "y": 370, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSpin Attack3.aseprite": {
+      "frame": { "x": 270, "y": 370, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSpin Attack4.aseprite": {
+      "frame": { "x": 360, "y": 370, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiSpin Attack5.aseprite": {
+      "frame": { "x": 450, "y": 370, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiBlock0.aseprite": {
+      "frame": { "x": 0, "y": 407, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiBlock1.aseprite": {
+      "frame": { "x": 90, "y": 407, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiBlock2.aseprite": {
+      "frame": { "x": 180, "y": 407, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiBlock3.aseprite": {
+      "frame": { "x": 270, "y": 407, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiBlock4.aseprite": {
+      "frame": { "x": 360, "y": 407, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiBlock5.aseprite": {
+      "frame": { "x": 450, "y": 407, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiDash0.aseprite": {
+      "frame": { "x": 0, "y": 444, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiDash1.aseprite": {
+      "frame": { "x": 90, "y": 444, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiDash2.aseprite": {
+      "frame": { "x": 180, "y": 444, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiDash3.aseprite": {
+      "frame": { "x": 270, "y": 444, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiDash4.aseprite": {
+      "frame": { "x": 360, "y": 444, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiDash5.aseprite": {
+      "frame": { "x": 450, "y": 444, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump0.aseprite": {
+      "frame": { "x": 0, "y": 481, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump1.aseprite": {
+      "frame": { "x": 90, "y": 481, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump2.aseprite": {
+      "frame": { "x": 180, "y": 481, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumitrans0.aseprite": {
+      "frame": { "x": 0, "y": 518, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumitrans1.aseprite": {
+      "frame": { "x": 90, "y": 518, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumitrans2.aseprite": {
+      "frame": { "x": 180, "y": 518, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumitrans3.aseprite": {
+      "frame": { "x": 270, "y": 518, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall0.aseprite": {
+      "frame": { "x": 0, "y": 555, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall1.aseprite": {
+      "frame": { "x": 90, "y": 555, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall2.aseprite": {
+      "frame": { "x": 180, "y": 555, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport0.aseprite": {
+      "frame": { "x": 0, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport1.aseprite": {
+      "frame": { "x": 90, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport2.aseprite": {
+      "frame": { "x": 180, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport3.aseprite": {
+      "frame": { "x": 270, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport4.aseprite": {
+      "frame": { "x": 360, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport5.aseprite": {
+      "frame": { "x": 450, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport6.aseprite": {
+      "frame": { "x": 540, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport7.aseprite": {
+      "frame": { "x": 630, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiJump Teleport8.aseprite": {
+      "frame": { "x": 720, "y": 592, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiAppear Tele0.aseprite": {
+      "frame": { "x": 0, "y": 629, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiAppear Tele1.aseprite": {
+      "frame": { "x": 90, "y": 629, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiAppear Tele2.aseprite": {
+      "frame": { "x": 180, "y": 629, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiAppear Tele3.aseprite": {
+      "frame": { "x": 270, "y": 629, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiAppear Tele4.aseprite": {
+      "frame": { "x": 360, "y": 629, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiAppear Tele5.aseprite": {
+      "frame": { "x": 450, "y": 629, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack0.aseprite": {
+      "frame": { "x": 0, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack1.aseprite": {
+      "frame": { "x": 90, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack2.aseprite": {
+      "frame": { "x": 180, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack3.aseprite": {
+      "frame": { "x": 270, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack4.aseprite": {
+      "frame": { "x": 360, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack5.aseprite": {
+      "frame": { "x": 450, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack6.aseprite": {
+      "frame": { "x": 540, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack7.aseprite": {
+      "frame": { "x": 630, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiFall Attack8.aseprite": {
+      "frame": { "x": 720, "y": 666, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumicrouch land0.aseprite": {
+      "frame": { "x": 0, "y": 703, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumicrouch land1.aseprite": {
+      "frame": { "x": 90, "y": 703, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumicrouch land2.aseprite": {
+      "frame": { "x": 180, "y": 703, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumicrouch land3.aseprite": {
+      "frame": { "x": 270, "y": 703, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiLedge Grab0.aseprite": {
+      "frame": { "x": 0, "y": 740, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiLedge Grab1.aseprite": {
+      "frame": { "x": 90, "y": 740, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiLedge Grab2.aseprite": {
+      "frame": { "x": 180, "y": 740, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiLedge Grab3.aseprite": {
+      "frame": { "x": 270, "y": 740, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiLedge Grab4.aseprite": {
+      "frame": { "x": 360, "y": 740, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall hold0.aseprite": {
+      "frame": { "x": 0, "y": 777, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall Transition0.aseprite": {
+      "frame": { "x": 0, "y": 814, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall Transition1.aseprite": {
+      "frame": { "x": 90, "y": 814, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall Slide0.aseprite": {
+      "frame": { "x": 0, "y": 851, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall Slide1.aseprite": {
+      "frame": { "x": 90, "y": 851, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall Slide2.aseprite": {
+      "frame": { "x": 180, "y": 851, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall slide Stop0.aseprite": {
+      "frame": { "x": 0, "y": 888, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall slide Stop1.aseprite": {
+      "frame": { "x": 90, "y": 888, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiWall slide Stop2.aseprite": {
+      "frame": { "x": 180, "y": 888, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiHit0.aseprite": {
+      "frame": { "x": 0, "y": 925, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumiHit1.aseprite": {
+      "frame": { "x": 90, "y": 925, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumideath0.aseprite": {
+      "frame": { "x": 0, "y": 962, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumideath1.aseprite": {
+      "frame": { "x": 90, "y": 962, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumideath2.aseprite": {
+      "frame": { "x": 180, "y": 962, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumideath3.aseprite": {
+      "frame": { "x": 270, "y": 962, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumideath4.aseprite": {
+      "frame": { "x": 360, "y": 962, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    },
+    "rumideath5.aseprite": {
+      "frame": { "x": 450, "y": 962, "w": 90, "h": 37 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 90, "h": 37 },
+      "sourceSize": { "w": 90, "h": 37 },
+      "duration": 100
+    }
+  },
+  "meta": {
+    "app": "https://www.aseprite.org/",
+    "version": "1.3.13-arm64",
+    "image": "rumi2.png",
+    "format": "RGBA8888",
+    "size": { "w": 900, "h": 999 },
+    "scale": "1",
+    "frameTags": [
+      {
+        "name": "static idle",
+        "from": 1,
+        "to": 1,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Idle",
+        "from": 2,
+        "to": 10,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Walk",
+        "from": 11,
+        "to": 18,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Run",
+        "from": 19,
+        "to": 26,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Run Fast",
+        "from": 27,
+        "to": 34,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Roll",
+        "from": 35,
+        "to": 42,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Roll Attack",
+        "from": 43,
+        "to": 52,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Slash 1",
+        "from": 53,
+        "to": 59,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Slash 2",
+        "from": 60,
+        "to": 64,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Slam",
+        "from": 65,
+        "to": 69,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Spin Attack",
+        "from": 70,
+        "to": 75,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Block",
+        "from": 76,
+        "to": 81,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Dash",
+        "from": 82,
+        "to": 87,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Jump",
+        "from": 88,
+        "to": 90,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "trans",
+        "from": 91,
+        "to": 94,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Fall",
+        "from": 95,
+        "to": 97,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Jump Teleport",
+        "from": 98,
+        "to": 106,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Appear Tele",
+        "from": 107,
+        "to": 112,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Fall Attack",
+        "from": 113,
+        "to": 121,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "crouch land",
+        "from": 122,
+        "to": 125,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Ledge Grab",
+        "from": 126,
+        "to": 130,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Wall hold",
+        "from": 131,
+        "to": 131,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Wall Transition",
+        "from": 132,
+        "to": 133,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Wall Slide",
+        "from": 134,
+        "to": 136,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Wall slide Stop",
+        "from": 137,
+        "to": 139,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "Hit",
+        "from": 146,
+        "to": 147,
+        "direction": "forward",
+        "color": "#000000ff"
+      },
+      {
+        "name": "death",
+        "from": 148,
+        "to": 153,
+        "direction": "forward",
+        "color": "#000000ff"
+      }
+    ]
+  }
+}
