@@ -11,7 +11,7 @@ import { Tween, Easing, Group } from "@tweenjs/tween.js";
 
 const rows = 8;
 const cols = 6;
-const padding = 50; // optional padding around the grid
+const padding = 0; // optional padding around the grid
 
 (async () => {
   const app = new Application();
@@ -45,42 +45,7 @@ const padding = 50; // optional padding around the grid
   app.stage.addChild(gridContainer);
   let activeTween: Tween | null = null;
 
-  // Hardcoding some grass and flowers as background
-  async function placeGrassAndFlowers() {
-    const flowerTex = await Assets.load("/assets/flower.png");
-    const grass1Tex = await Assets.load("/assets/grass1.png");
-    const grass2Tex = await Assets.load("/assets/grass2.png");
-    const grass3Tex = await Assets.load("/assets/grass3.png");
-
-    const textures = [flowerTex, grass1Tex, grass2Tex, grass3Tex];
-
-    // Helper function to place a sprite at grid position (gx, gy)
-    function placeSprite(texture: Texture, gx: number, gy: number) {
-      const sprite = new Sprite(texture);
-      sprite.anchor.set(0.5);
-      sprite.x = offsetX + gx * tileSize + tileSize / 2;
-      sprite.y = offsetY + gy * tileSize + tileSize / 2;
-      sprite.scale.set(0.9); // Scale to fit nicely inside tile
-      app.stage.addChild(sprite);
-    }
-
-    // Hardcoded positions with random selection of texture
-    const placements = [
-      // edges
-      [-4, 0],
-      [-5, 7],
-      [9, 7],
-      [8, 0],
-    ];
-
-    for (const [gx, gy] of placements) {
-      const tex = textures[Math.floor(Math.random() * textures.length)];
-      placeSprite(tex, gx, gy);
-    }
-  }
-
   await placeGrassAndFlowers();
-
   await Assets.load("/assets/rumi2.json");
 
   const idleFrames: Texture[] = getAnimationFrames("Idle", 9);
@@ -112,11 +77,59 @@ const padding = 50; // optional padding around the grid
   ];
 
   rumi.play();
-  placeRumiAt();
+  placeRumi();
   scaleRumiToFit();
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                                helper functions                                ||
   // ! ||--------------------------------------------------------------------------------||
+
+  // Hardcoding some grass and flowers as background
+  async function placeGrassAndFlowers() {
+    const flowerTex = await Assets.load("/assets/flower.png");
+    const grass1Tex = await Assets.load("/assets/grass1.png");
+    const grass2Tex = await Assets.load("/assets/grass2.png");
+    const grass3Tex = await Assets.load("/assets/grass3.png");
+    grass3Tex.source.style.scaleMode = "nearest";
+    grass2Tex.source.style.scaleMode = "nearest";
+    grass1Tex.source.style.scaleMode = "nearest";
+    flowerTex.source.style.scaleMode = "nearest";
+
+    const textures = [flowerTex, grass1Tex, grass2Tex, grass3Tex];
+
+    // Helper function to place a sprite at grid position (gx, gy)
+    function placeSprite(texture: Texture, gx: number, gy: number) {
+      const sprite = new Sprite(texture);
+      sprite.anchor.set(0.5);
+      sprite.x = offsetX + gx * tileSize + tileSize / 2;
+      sprite.y = offsetY + gy * tileSize + tileSize / 2;
+      sprite.scale.set(0.9); // Scale to fit nicely inside tile
+      app.stage.addChild(sprite);
+    }
+
+    // Hardcoded positions with random selection of texture
+    const placements = [
+      // top left
+      [0, 0],
+      [-1, 0],
+      [-1, 1],
+      // bottom right
+      [5, 7],
+      [6, 7],
+      [6, 6],
+      // center
+      [3, 4],
+      [5, 3],
+      [2, 3],
+      [2, 5],
+    ];
+
+    for (const [gx, gy] of placements) {
+      const tex = textures[Math.floor(Math.random() * textures.length)];
+      placeSprite(tex, gx, gy);
+    }
+  }
+
+  // Scales her to fit in the grid, also handles mirroring the sprite
   function scaleRumiToFit(flip: boolean = false) {
     const bounds = rumi.getLocalBounds();
     const frameWidth = bounds.width;
@@ -132,7 +145,8 @@ const padding = 50; // optional padding around the grid
     rumi.scale.set(flip ? -uniformScale : uniformScale, uniformScale);
   }
 
-  function placeRumiAt() {
+  // Sets Rumi position to her current x,y
+  function placeRumi() {
     const tileCenterX = offsetX + rumiX * tileSize + tileSize / 2;
     const tileCenterY = offsetY + rumiY * tileSize + tileSize / 2;
 
@@ -140,6 +154,7 @@ const padding = 50; // optional padding around the grid
     rumi.y = tileCenterY;
   }
 
+  // Moves Rumi to new x,y in the grid, with tweening
   function moveRumiToGrid(newX: number, newY: number, flip = false) {
     const targetX = offsetX + newX * tileSize + tileSize / 2;
     const targetY = offsetY + newY * tileSize + tileSize / 2;
@@ -163,6 +178,7 @@ const padding = 50; // optional padding around the grid
     rumiY = newY;
   }
 
+  // For debugging
   // function drawGrid() {
   //   gridContainer.removeChildren();
 
@@ -201,11 +217,11 @@ const padding = 50; // optional padding around the grid
     return attack;
   }
 
-  function switchRumiAnimation(name: string, frames: Texture[]) {
-    if (currentAnimation === name) return;
+  function switchRumiAnimation(animationName: string, frames: Texture[]) {
+    if (currentAnimation === animationName) return;
     rumi.textures = frames;
     rumi.play();
-    currentAnimation = name;
+    currentAnimation = animationName;
   }
 
   window.addEventListener("keydown", (e) => {
