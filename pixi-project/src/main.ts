@@ -4,9 +4,10 @@ import {
   Assets,
   Container,
   Graphics,
-  StrokeInput,
   Texture,
 } from "pixi.js";
+
+import { Tween, Easing, Group } from "@tweenjs/tween.js";
 
 const rows = 8;
 const cols = 12;
@@ -43,6 +44,7 @@ const padding = 50; // optional padding around the grid
   const gridContainer = new Container();
 
   app.stage.addChild(gridContainer);
+  let activeTween: Tween<any> | null = null;
 
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                                helper functions                                ||
@@ -62,12 +64,46 @@ const padding = 50; // optional padding around the grid
     rumi.scale.set(flip ? -uniformScale : uniformScale, uniformScale);
   }
 
-  function placeRumiAt(x: number, y: number) {
-    const tileCenterX = offsetX + x * tileSize + tileSize / 2;
-    const tileCenterY = offsetY + y * tileSize + tileSize / 2;
+  function placeRumiAt() {
+    const tileCenterX = offsetX + rumiX * tileSize + tileSize / 2;
+    const tileCenterY = offsetY + rumiY * tileSize + tileSize / 2;
 
     rumi.x = tileCenterX;
     rumi.y = tileCenterY;
+  }
+
+  function updateRumiPosition() {
+    const tileCenterX = offsetX + rumiX * tileSize + tileSize / 2;
+    const tileCenterY = offsetY + rumiY * tileSize + tileSize / 2;
+    rumi.x = tileCenterX;
+    rumi.y = tileCenterY;
+
+    switchRumiAnimation("Idle", idleFrames);
+  }
+
+  function moveRumiToGrid(newX: number, newY: number, flip = false) {
+    const targetX = offsetX + newX * tileSize + tileSize / 2;
+    const targetY = offsetY + newY * tileSize + tileSize / 2;
+
+    switchRumiAnimation("Run", runFrames);
+    scaleRumiToFit(flip);
+
+    const tween = new Tween(rumi, tweenGroup) // pass group as second argument
+      .to({ x: targetX, y: targetY }, 500)
+      .easing(Easing.Quadratic.Out)
+      .onComplete(() => {
+        if (activeTween === tween) {
+          switchRumiAnimation("Idle", idleFrames);
+        }
+        tweenInProgress = false;
+      });
+
+    tween.start();
+    activeTween = tween;
+
+    rumiX = newX;
+    rumiY = newY;
+    tweenInProgress = true;
   }
 
   function drawGrid() {
@@ -87,7 +123,7 @@ const padding = 50; // optional padding around the grid
     }
   }
 
-  drawGrid();
+  //drawGrid();
 
   await Assets.load("/assets/rumi2.json");
 
@@ -99,8 +135,12 @@ const padding = 50; // optional padding around the grid
   const spinFrames: Texture[] = getAnimationFrames("Spin Attack", 6);
 
   const rumi = new AnimatedSprite(idleFrames);
+  const tweenGroup = new Group();
+  let tweenInProgress = false;
 
-  placeRumiAt(3, 1);
+  let rumiX = 0;
+  let rumiY = 0;
+  placeRumiAt();
   scaleRumiToFit();
   rumi.anchor.set(0.3);
   rumi.animationSpeed = 0.15;
@@ -109,24 +149,20 @@ const padding = 50; // optional padding around the grid
   app.stage.addChild(rumi);
 
   let currentAnimation = "Idle";
-  let isMovingLeft = false;
-  let isMovingRight = false;
-  let isMovingUp = false;
-  let isMovingDown = false;
   let isAttacking = false;
 
   function playAttack() {
-    if (isAttacking) return;
+    // if (isAttacking) return;
     isAttacking = true;
 
     const nextAttack = getNextAttack();
-    switchAnimation(nextAttack.name, nextAttack.frames);
+    switchRumiAnimation(nextAttack.name, nextAttack.frames);
     rumi.loop = false;
 
     rumi.onComplete = () => {
       isAttacking = false;
       rumi.loop = true;
-      switchAnimation("Idle", idleFrames);
+      switchRumiAnimation("Idle", idleFrames);
     };
 
     rumi.play();
@@ -147,60 +183,45 @@ const padding = 50; // optional padding around the grid
     return attack;
   }
 
-  function switchAnimation(name: string, frames: Texture[]) {
+  function switchRumiAnimation(name: string, frames: Texture[]) {
     if (currentAnimation === name) return;
     rumi.textures = frames;
     rumi.play();
     currentAnimation = name;
   }
 
+  let flip = false;
   window.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") {
-      isMovingRight = true;
+    let moved = false;
 
-      scaleRumiToFit(false);
-      switchAnimation("Run", runFrames);
+    if (e.key === "ArrowRight") {
+      rumiX++;
+      flip = false;
+      moved = true;
     } else if (e.key === "ArrowLeft") {
-      isMovingLeft = true;
-      scaleRumiToFit(true);
-      switchAnimation("Run", runFrames);
+      rumiX--;
+      flip = true;
+      moved = true;
     } else if (e.key === "ArrowUp") {
-      isMovingUp = true;
-      switchAnimation("Run", runFrames);
+      rumiY--;
+      moved = true;
     } else if (e.key === "ArrowDown") {
-      isMovingDown = true;
-      switchAnimation("Run", runFrames);
+      rumiY++;
+      moved = true;
     } else if (e.key === "x") {
       playAttack();
     }
-  });
 
-  window.addEventListener("keyup", (e) => {
-    if (e.key === "ArrowRight") {
-      isMovingRight = false;
-    } else if (e.key === "ArrowLeft") {
-      isMovingLeft = false;
-    } else if (e.key === "ArrowUp") {
-      isMovingUp = false;
-    } else if (e.key === "ArrowDown") {
-      isMovingDown = false;
-    }
-
-    if (!isMovingLeft && !isMovingRight && !isAttacking) {
-      switchAnimation("Idle", idleFrames);
+    if (moved) {
+      scaleRumiToFit(flip); // Flip before moving
+      switchRumiAnimation("Run", runFrames);
+      moveRumiToGrid(rumiX, rumiY, flip);
     }
   });
 
-  app.ticker.add((time) => {
-    if (isMovingRight) {
-      rumi.x += 2 * time.deltaTime;
-    } else if (isMovingLeft) {
-      rumi.x -= 2 * time.deltaTime;
-    } else if (isMovingUp) {
-      rumi.y -= 1.5 * time.deltaTime;
-    } else if (isMovingDown) {
-      rumi.y += 1.5 * time.deltaTime;
-    }
+  app.ticker.add(() => {
+    //rumi.x += 2 * time.deltaTime;
+    tweenGroup.update(performance.now());
   });
 })();
 
