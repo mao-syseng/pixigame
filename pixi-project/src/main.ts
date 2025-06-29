@@ -3,7 +3,6 @@ import {
   Application,
   Assets,
   Container,
-  Graphics,
   Texture,
 } from "pixi.js";
 
@@ -34,7 +33,7 @@ const padding = 50; // optional padding around the grid
   const tileHeight = availableHeight / rows;
 
   const tileSize = Math.floor(
-    Math.min(tileWidth, tileHeight) / (window.devicePixelRatio || 1) // Important since pixels can be based on difference things
+    Math.min(tileWidth, tileHeight) / (window.devicePixelRatio || 1),
   );
   const gridWidth = tileSize * cols;
   const gridHeight = tileSize * rows;
@@ -44,7 +43,7 @@ const padding = 50; // optional padding around the grid
   const gridContainer = new Container();
 
   app.stage.addChild(gridContainer);
-  let activeTween: Tween<any> | null = null;
+  let activeTween: Tween | null = null;
 
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                                helper functions                                ||
@@ -72,15 +71,6 @@ const padding = 50; // optional padding around the grid
     rumi.y = tileCenterY;
   }
 
-  function updateRumiPosition() {
-    const tileCenterX = offsetX + rumiX * tileSize + tileSize / 2;
-    const tileCenterY = offsetY + rumiY * tileSize + tileSize / 2;
-    rumi.x = tileCenterX;
-    rumi.y = tileCenterY;
-
-    switchRumiAnimation("Idle", idleFrames);
-  }
-
   function moveRumiToGrid(newX: number, newY: number, flip = false) {
     const targetX = offsetX + newX * tileSize + tileSize / 2;
     const targetY = offsetY + newY * tileSize + tileSize / 2;
@@ -95,7 +85,6 @@ const padding = 50; // optional padding around the grid
         if (activeTween === tween) {
           switchRumiAnimation("Idle", idleFrames);
         }
-        tweenInProgress = false;
       });
 
     tween.start();
@@ -103,27 +92,26 @@ const padding = 50; // optional padding around the grid
 
     rumiX = newX;
     rumiY = newY;
-    tweenInProgress = true;
   }
 
-  function drawGrid() {
-    gridContainer.removeChildren();
+  // function drawGrid() {
+  //   gridContainer.removeChildren();
 
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        const box = new Graphics();
+  //   for (let row = 0; row < rows; row++) {
+  //     for (let col = 0; col < cols; col++) {
+  //       const box = new Graphics();
 
-        box.rect(0, 0, tileSize, tileSize);
-        box.stroke(0xa69aca);
+  //       box.rect(0, 0, tileSize, tileSize);
+  //       box.stroke(0xa69aca);
 
-        box.x = offsetX + col * tileSize;
-        box.y = offsetY + row * tileSize;
-        gridContainer.addChild(box);
-      }
-    }
-  }
+  //       box.x = offsetX + col * tileSize;
+  //       box.y = offsetY + row * tileSize;
+  //       gridContainer.addChild(box);
+  //     }
+  //   }
+  // }
 
-  //drawGrid();
+  // drawGrid();
 
   await Assets.load("/assets/rumi2.json");
 
@@ -136,7 +124,6 @@ const padding = 50; // optional padding around the grid
 
   const rumi = new AnimatedSprite(idleFrames);
   const tweenGroup = new Group();
-  let tweenInProgress = false;
 
   let rumiX = 0;
   let rumiY = 0;
@@ -149,18 +136,13 @@ const padding = 50; // optional padding around the grid
   app.stage.addChild(rumi);
 
   let currentAnimation = "Idle";
-  let isAttacking = false;
 
   function playAttack() {
-    // if (isAttacking) return;
-    isAttacking = true;
-
     const nextAttack = getNextAttack();
     switchRumiAnimation(nextAttack.name, nextAttack.frames);
     rumi.loop = false;
 
     rumi.onComplete = () => {
-      isAttacking = false;
       rumi.loop = true;
       switchRumiAnimation("Idle", idleFrames);
     };
