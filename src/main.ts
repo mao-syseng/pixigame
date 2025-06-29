@@ -3,6 +3,9 @@ import {
   Application,
   Assets,
   Container,
+  FederatedPointerEvent,
+  Graphics,
+  Rectangle,
   Sprite,
   Texture,
 } from "pixi.js";
@@ -62,6 +65,7 @@ const padding = 0; // optional padding around the grid
   let rumiY = 3;
   let currentAttackIndex = 0;
   let rumiFlip = false;
+  let moved = false; // vibe coded, this i think can be removed when we attack with movement
 
   rumi.anchor.set(0.3);
   rumi.animationSpeed = 0.15;
@@ -79,6 +83,81 @@ const padding = 0; // optional padding around the grid
   rumi.play();
   placeRumi();
   scaleRumiToFit();
+
+  // ! ||--------------------------------------------------------------------------------||
+  // ! ||                              mobile controls setup                             ||
+  // ! ||--------------------------------------------------------------------------------||
+
+  const inputOverlay = new Graphics();
+  inputOverlay.beginFill(0x000000, 0); // Fully transparent
+  inputOverlay.drawRect(0, 0, app.screen.width, app.screen.height);
+  inputOverlay.endFill();
+
+  inputOverlay.interactive = true;
+  inputOverlay.hitArea = new Rectangle(
+    0,
+    0,
+    app.screen.width,
+    app.screen.height
+  );
+
+  app.stage.addChild(inputOverlay);
+
+  inputOverlay.on("pointerdown", (event: FederatedPointerEvent) => {
+    const x = event.global.x;
+    const y = event.global.y;
+
+    const isLeft = x < canvasWidth / 3;
+    const isRight = x > (2 * canvasWidth) / 3;
+    const isTop = y < canvasHeight / 3;
+    const isBottom = y > (2 * canvasHeight) / 3;
+
+    moved = false;
+
+    if (isLeft) {
+      handleLeft();
+    } else if (isRight) {
+      handleRight();
+    } else if (isTop) {
+      handleUp();
+    } else if (isBottom) {
+      handleDown();
+    } else {
+      playAttack();
+    }
+
+    if (moved) {
+      scaleRumiToFit(rumiFlip); // Flip before moving
+      switchRumiAnimation("Run", runFrames);
+      moveRumiToGrid(rumiX, rumiY, rumiFlip);
+    }
+  });
+
+  // ! ||--------------------------------------------------------------------------------||
+  // ! ||                                 input handlers                                 ||
+  // ! ||--------------------------------------------------------------------------------||
+  function handleRight(): void {
+    rumiX++;
+    rumiFlip = false;
+    moved = true;
+  }
+
+  function handleLeft(): void {
+    rumiX--;
+    rumiFlip = true;
+    moved = true;
+  }
+
+  function handleUp(): void {
+    rumiY--;
+    moved = true;
+  }
+
+  function handleDown(): void {
+    rumiY++;
+    moved = true;
+  }
+
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                                helper functions                                ||
   // ! ||--------------------------------------------------------------------------------||
@@ -225,22 +304,15 @@ const padding = 0; // optional padding around the grid
   }
 
   window.addEventListener("keydown", (e) => {
-    let moved = false;
-
+    moved = false;
     if (e.key === "ArrowRight") {
-      rumiX++;
-      rumiFlip = false;
-      moved = true;
+      handleRight();
     } else if (e.key === "ArrowLeft") {
-      rumiX--;
-      rumiFlip = true;
-      moved = true;
+      handleLeft();
     } else if (e.key === "ArrowUp") {
-      rumiY--;
-      moved = true;
+      handleUp();
     } else if (e.key === "ArrowDown") {
-      rumiY++;
-      moved = true;
+      handleDown();
     } else if (e.key === "x") {
       playAttack();
     }
