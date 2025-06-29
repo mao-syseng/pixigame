@@ -110,12 +110,12 @@ const padding = 0; // optional padding around the grid
     const placements = [
       // top left
       [0, 0],
-      [-1, 0],
-      [-1, 1],
+      [0, 1],
+      [1, 0],
       // bottom right
       [5, 7],
-      [6, 7],
-      [6, 6],
+      [5, 6],
+      [4, 7],
       // center
       [3, 4],
       [5, 3],
