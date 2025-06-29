@@ -107,10 +107,16 @@ const padding = 0; // optional padding around the grid
     const x = event.global.x;
     const y = event.global.y;
 
-    const isLeft = x < canvasWidth / 3;
-    const isRight = x > (2 * canvasWidth) / 3;
-    const isTop = y < canvasHeight / 3;
-    const isBottom = y > (2 * canvasHeight) / 3;
+    // Tweakable thresholds
+    const leftThreshold = canvasWidth * 0.4;
+    const rightThreshold = canvasWidth * 0.6;
+    const topThreshold = canvasHeight * 0.4;
+    const bottomThreshold = canvasHeight * 0.6;
+
+    const isLeft = x < leftThreshold;
+    const isRight = x > rightThreshold;
+    const isTop = y < topThreshold;
+    const isBottom = y > bottomThreshold;
 
     moved = false;
 
