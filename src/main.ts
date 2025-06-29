@@ -9,7 +9,7 @@ import {
 import { Tween, Easing, Group } from "@tweenjs/tween.js";
 
 const rows = 8;
-const cols = 12;
+const cols = 6;
 const padding = 50; // optional padding around the grid
 
 (async () => {
@@ -33,7 +33,7 @@ const padding = 50; // optional padding around the grid
   const tileHeight = availableHeight / rows;
 
   const tileSize = Math.floor(
-    Math.min(tileWidth, tileHeight) / (window.devicePixelRatio || 1),
+    Math.min(tileWidth, tileHeight) / (window.devicePixelRatio || 1)
   );
   const gridWidth = tileSize * cols;
   const gridHeight = tileSize * rows;
