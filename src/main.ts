@@ -249,7 +249,7 @@ const padding = 0; // optional padding around the grid
 
     const tween = new Tween(rumi, tweenGroup) // pass group as second argument
       .to({ x: targetX, y: targetY }, 500)
-      .easing(Easing.Quadratic.Out)
+      .easing(Easing.Linear.Out)
       .onComplete(() => {
         if (activeTween === tween) {
           switchRumiAnimation("Idle", idleFrames);
