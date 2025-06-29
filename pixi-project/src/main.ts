@@ -1,4 +1,16 @@
-import { AnimatedSprite, Application, Assets, Texture } from "pixi.js";
+import {
+  AnimatedSprite,
+  Application,
+  Assets,
+  Container,
+  Graphics,
+  StrokeInput,
+  Texture,
+} from "pixi.js";
+
+const rows = 8;
+const cols = 12;
+const padding = 50; // optional padding around the grid
 
 (async () => {
   const app = new Application();
@@ -10,6 +22,73 @@ import { AnimatedSprite, Application, Assets, Texture } from "pixi.js";
   });
   document.getElementById("pixi-container")!.appendChild(app.canvas);
 
+  // ! ||--------------------------------------------------------------------------------||
+  // ! ||                        scaling grid and tiles to screen                        ||
+  // ! ||--------------------------------------------------------------------------------||
+  const canvasWidth = app.screen.width;
+  const canvasHeight = app.screen.height;
+  const availableWidth = canvasWidth - padding * 2;
+  const availableHeight = canvasHeight - padding * 2;
+  const tileWidth = availableWidth / cols;
+  const tileHeight = availableHeight / rows;
+
+  const tileSize = Math.floor(
+    Math.min(tileWidth, tileHeight) / (window.devicePixelRatio || 1) // Important since pixels can be based on difference things
+  );
+  const gridWidth = tileSize * cols;
+  const gridHeight = tileSize * rows;
+  const offsetX = (canvasWidth - gridWidth) / 2;
+  const offsetY = (canvasHeight - gridHeight) / 2;
+
+  const gridContainer = new Container();
+
+  app.stage.addChild(gridContainer);
+
+  // ! ||--------------------------------------------------------------------------------||
+  // ! ||                                helper functions                                ||
+  // ! ||--------------------------------------------------------------------------------||
+  function scaleRumiToFit(flip: boolean = false) {
+    const bounds = rumi.getLocalBounds();
+    const frameWidth = bounds.width;
+    const frameHeight = bounds.height;
+
+    const maxWidth = tileSize * 3; // rumis sprite is very wide
+    const maxHeight = tileSize * 1.5; // account for height of spritesheet vs visual size
+
+    const scaleX = maxWidth / frameWidth;
+    const scaleY = maxHeight / frameHeight;
+    const uniformScale = Math.min(scaleX, scaleY);
+
+    rumi.scale.set(flip ? -uniformScale : uniformScale, uniformScale);
+  }
+
+  function placeRumiAt(x: number, y: number) {
+    const tileCenterX = offsetX + x * tileSize + tileSize / 2;
+    const tileCenterY = offsetY + y * tileSize + tileSize / 2;
+
+    rumi.x = tileCenterX;
+    rumi.y = tileCenterY;
+  }
+
+  function drawGrid() {
+    gridContainer.removeChildren();
+
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const box = new Graphics();
+
+        box.rect(0, 0, tileSize, tileSize);
+        box.stroke(0xa69aca);
+
+        box.x = offsetX + col * tileSize;
+        box.y = offsetY + row * tileSize;
+        gridContainer.addChild(box);
+      }
+    }
+  }
+
+  drawGrid();
+
   await Assets.load("/assets/rumi2.json");
 
   const idleFrames: Texture[] = getAnimationFrames("Idle", 9);
@@ -20,11 +99,11 @@ import { AnimatedSprite, Application, Assets, Texture } from "pixi.js";
   const spinFrames: Texture[] = getAnimationFrames("Spin Attack", 6);
 
   const rumi = new AnimatedSprite(idleFrames);
-  rumi.x = app.screen.width / 2;
-  rumi.y = app.screen.height / 2;
+
+  placeRumiAt(3, 1);
+  scaleRumiToFit();
   rumi.anchor.set(0.3);
   rumi.animationSpeed = 0.15;
-  rumi.scale = 2;
   rumi.play();
 
   app.stage.addChild(rumi);
@@ -40,8 +119,8 @@ import { AnimatedSprite, Application, Assets, Texture } from "pixi.js";
     if (isAttacking) return;
     isAttacking = true;
 
-    const randomAttack = getRandomAttack();
-    switchAnimation(randomAttack.name, randomAttack.frames);
+    const nextAttack = getNextAttack();
+    switchAnimation(nextAttack.name, nextAttack.frames);
     rumi.loop = false;
 
     rumi.onComplete = () => {
@@ -53,28 +132,19 @@ import { AnimatedSprite, Application, Assets, Texture } from "pixi.js";
     rumi.play();
   }
 
-  function getRandomAttack() {
-    const attacks = [
-      {
-        name: "Slam",
-        frames: slamFrames,
-      },
-      {
-        name: "Slash 1",
-        frames: slash1Frames,
-      },
-      {
-        name: "Slash 2",
-        frames: slash2Frames,
-      },
-      {
-        name: "Spin Attack",
-        frames: spinFrames,
-      },
-    ];
+  const attacks = [
+    { name: "Slash 1", frames: slash1Frames },
+    { name: "Slash 2", frames: slash2Frames },
+    { name: "Slam", frames: slamFrames },
+    { name: "Spin Attack", frames: spinFrames },
+  ];
 
-    const randomIndex = Math.floor(Math.random() * attacks.length);
-    return attacks[randomIndex];
+  let currentAttackIndex = 0;
+
+  function getNextAttack() {
+    const attack = attacks[currentAttackIndex];
+    currentAttackIndex = (currentAttackIndex + 1) % attacks.length;
+    return attack;
   }
 
   function switchAnimation(name: string, frames: Texture[]) {
@@ -87,11 +157,12 @@ import { AnimatedSprite, Application, Assets, Texture } from "pixi.js";
   window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") {
       isMovingRight = true;
-      rumi.scale.x = 2; // face right
+
+      scaleRumiToFit(false);
       switchAnimation("Run", runFrames);
     } else if (e.key === "ArrowLeft") {
       isMovingLeft = true;
-      rumi.scale.x = -2; // face left (flip horizontally)
+      scaleRumiToFit(true);
       switchAnimation("Run", runFrames);
     } else if (e.key === "ArrowUp") {
       isMovingUp = true;
