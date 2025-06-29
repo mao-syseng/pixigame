@@ -3,6 +3,7 @@ import {
   Application,
   Assets,
   Container,
+  Sprite,
   Texture,
 } from "pixi.js";
 
@@ -31,7 +32,6 @@ const padding = 50; // optional padding around the grid
   const availableHeight = canvasHeight - padding * 2;
   const tileWidth = availableWidth / cols;
   const tileHeight = availableHeight / rows;
-
   const tileSize = Math.floor(
     Math.min(tileWidth, tileHeight) / (window.devicePixelRatio || 1)
   );
@@ -45,6 +45,75 @@ const padding = 50; // optional padding around the grid
   app.stage.addChild(gridContainer);
   let activeTween: Tween | null = null;
 
+  // Hardcoding some grass and flowers as background
+  async function placeGrassAndFlowers() {
+    const flowerTex = await Assets.load("/assets/flower.png");
+    const grass1Tex = await Assets.load("/assets/grass1.png");
+    const grass2Tex = await Assets.load("/assets/grass2.png");
+    const grass3Tex = await Assets.load("/assets/grass3.png");
+
+    const textures = [flowerTex, grass1Tex, grass2Tex, grass3Tex];
+
+    // Helper function to place a sprite at grid position (gx, gy)
+    function placeSprite(texture: Texture, gx: number, gy: number) {
+      const sprite = new Sprite(texture);
+      sprite.anchor.set(0.5);
+      sprite.x = offsetX + gx * tileSize + tileSize / 2;
+      sprite.y = offsetY + gy * tileSize + tileSize / 2;
+      sprite.scale.set(0.9); // Scale to fit nicely inside tile
+      app.stage.addChild(sprite);
+    }
+
+    // Hardcoded positions with random selection of texture
+    const placements = [
+      // edges
+      [-4, 0],
+      [-5, 7],
+      [9, 7],
+      [8, 0],
+    ];
+
+    for (const [gx, gy] of placements) {
+      const tex = textures[Math.floor(Math.random() * textures.length)];
+      placeSprite(tex, gx, gy);
+    }
+  }
+
+  await placeGrassAndFlowers();
+
+  await Assets.load("/assets/rumi2.json");
+
+  const idleFrames: Texture[] = getAnimationFrames("Idle", 9);
+  const runFrames: Texture[] = getAnimationFrames("Run", 8);
+  const slash1Frames: Texture[] = getAnimationFrames("Slash 1", 7);
+  const slash2Frames: Texture[] = getAnimationFrames("Slash 2", 5);
+  const slamFrames: Texture[] = getAnimationFrames("Slam", 5);
+  const spinFrames: Texture[] = getAnimationFrames("Spin Attack", 6);
+
+  const rumi = new AnimatedSprite(idleFrames);
+  const tweenGroup = new Group();
+
+  let rumiX = 2;
+  let rumiY = 3;
+  let currentAttackIndex = 0;
+  let rumiFlip = false;
+
+  rumi.anchor.set(0.3);
+  rumi.animationSpeed = 0.15;
+
+  app.stage.addChild(rumi);
+
+  let currentAnimation = "Idle";
+  const attacks = [
+    { name: "Slash 1", frames: slash1Frames },
+    { name: "Slash 2", frames: slash2Frames },
+    { name: "Slam", frames: slamFrames },
+    { name: "Spin Attack", frames: spinFrames },
+  ];
+
+  rumi.play();
+  placeRumiAt();
+  scaleRumiToFit();
   // ! ||--------------------------------------------------------------------------------||
   // ! ||                                helper functions                                ||
   // ! ||--------------------------------------------------------------------------------||
@@ -113,30 +182,6 @@ const padding = 50; // optional padding around the grid
 
   // drawGrid();
 
-  await Assets.load("/assets/rumi2.json");
-
-  const idleFrames: Texture[] = getAnimationFrames("Idle", 9);
-  const runFrames: Texture[] = getAnimationFrames("Run", 8);
-  const slash1Frames: Texture[] = getAnimationFrames("Slash 1", 7);
-  const slash2Frames: Texture[] = getAnimationFrames("Slash 2", 5);
-  const slamFrames: Texture[] = getAnimationFrames("Slam", 5);
-  const spinFrames: Texture[] = getAnimationFrames("Spin Attack", 6);
-
-  const rumi = new AnimatedSprite(idleFrames);
-  const tweenGroup = new Group();
-
-  let rumiX = 0;
-  let rumiY = 0;
-  placeRumiAt();
-  scaleRumiToFit();
-  rumi.anchor.set(0.3);
-  rumi.animationSpeed = 0.15;
-  rumi.play();
-
-  app.stage.addChild(rumi);
-
-  let currentAnimation = "Idle";
-
   function playAttack() {
     const nextAttack = getNextAttack();
     switchRumiAnimation(nextAttack.name, nextAttack.frames);
@@ -149,15 +194,6 @@ const padding = 50; // optional padding around the grid
 
     rumi.play();
   }
-
-  const attacks = [
-    { name: "Slash 1", frames: slash1Frames },
-    { name: "Slash 2", frames: slash2Frames },
-    { name: "Slam", frames: slamFrames },
-    { name: "Spin Attack", frames: spinFrames },
-  ];
-
-  let currentAttackIndex = 0;
 
   function getNextAttack() {
     const attack = attacks[currentAttackIndex];
@@ -172,17 +208,16 @@ const padding = 50; // optional padding around the grid
     currentAnimation = name;
   }
 
-  let flip = false;
   window.addEventListener("keydown", (e) => {
     let moved = false;
 
     if (e.key === "ArrowRight") {
       rumiX++;
-      flip = false;
+      rumiFlip = false;
       moved = true;
     } else if (e.key === "ArrowLeft") {
       rumiX--;
-      flip = true;
+      rumiFlip = true;
       moved = true;
     } else if (e.key === "ArrowUp") {
       rumiY--;
@@ -195,18 +230,20 @@ const padding = 50; // optional padding around the grid
     }
 
     if (moved) {
-      scaleRumiToFit(flip); // Flip before moving
+      scaleRumiToFit(rumiFlip); // Flip before moving
       switchRumiAnimation("Run", runFrames);
-      moveRumiToGrid(rumiX, rumiY, flip);
+      moveRumiToGrid(rumiX, rumiY, rumiFlip);
     }
   });
 
   app.ticker.add(() => {
-    //rumi.x += 2 * time.deltaTime;
     tweenGroup.update(performance.now());
   });
 })();
 
+// ! ||--------------------------------------------------------------------------------||
+// ! ||                                 pure functions                                 ||
+// ! ||--------------------------------------------------------------------------------||
 function getAnimationFrames(name: string, frameCount: number): Texture[] {
   const frames: Texture[] = [];
 
