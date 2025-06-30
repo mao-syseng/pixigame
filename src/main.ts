@@ -11,6 +11,7 @@ import {
 } from "pixi.js";
 
 import { Tween, Easing, Group } from "@tweenjs/tween.js";
+import { getAnimationFrames } from "./animationHelpers";
 
 const rows = 8;
 const cols = 6;
@@ -51,12 +52,12 @@ const padding = 0; // optional padding around the grid
   await placeGrassAndFlowers();
   await Assets.load("/assets/rumi2.json");
 
-  const idleFrames: Texture[] = getAnimationFrames("Idle", 9);
-  const runFrames: Texture[] = getAnimationFrames("Run", 8);
-  const slash1Frames: Texture[] = getAnimationFrames("Slash 1", 7);
-  const slash2Frames: Texture[] = getAnimationFrames("Slash 2", 5);
-  const slamFrames: Texture[] = getAnimationFrames("Slam", 5);
-  const spinFrames: Texture[] = getAnimationFrames("Spin Attack", 6);
+  const idleFrames: Texture[] = getAnimationFrames("rumiIdle", 9);
+  const runFrames: Texture[] = getAnimationFrames("rumiRun", 8);
+  const slash1Frames: Texture[] = getAnimationFrames("rumiSlash 1", 7);
+  const slash2Frames: Texture[] = getAnimationFrames("rumiSlash 2", 5);
+  const slamFrames: Texture[] = getAnimationFrames("rumiSlam", 5);
+  const spinFrames: Texture[] = getAnimationFrames("rumiSpin Attack", 6);
 
   const rumi = new AnimatedSprite(idleFrames);
   const tweenGroup = new Group();
@@ -332,18 +333,3 @@ const padding = 0; // optional padding around the grid
     tweenGroup.update(performance.now());
   });
 })();
-
-// ! ||--------------------------------------------------------------------------------||
-// ! ||                                 pure functions                                 ||
-// ! ||--------------------------------------------------------------------------------||
-function getAnimationFrames(name: string, frameCount: number): Texture[] {
-  const frames: Texture[] = [];
-
-  for (let i = 0; i < frameCount; i++) {
-    const texture = Texture.from(`rumi${name}${i}.aseprite`);
-    texture.source.style.scaleMode = "nearest";
-    frames.push(texture);
-  }
-
-  return frames;
-}
