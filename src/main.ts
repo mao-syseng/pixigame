@@ -89,10 +89,8 @@ const padding = 0; // optional padding around the grid
   // ! ||--------------------------------------------------------------------------------||
 
   const inputOverlay = new Graphics();
-  inputOverlay.beginFill(0x000000, 0); // Fully transparent
-  inputOverlay.drawRect(0, 0, app.screen.width, app.screen.height);
-  inputOverlay.endFill();
-
+  inputOverlay.rect(0, 0, canvasWidth, canvasHeight);
+  inputOverlay.fill({ color: 0x000000, alpha: 0 }); // Fully transparent
   inputOverlay.interactive = true;
   inputOverlay.hitArea = new Rectangle(
     0,
